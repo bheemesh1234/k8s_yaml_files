@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: default-cpu-demo-3
+
+spec:
+  containers:
+  - name: c00
+    image: nginx
+    resources:
+      limits:
+        cpu: 1

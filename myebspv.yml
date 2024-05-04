@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myebsvol
+
+spec:
+  capacity: 
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+
+  awsElasticBlockStore:
+    volumeID: vol-094671ca53e5b5241          #Persistent volume ID
+    fsType: ext4

@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod
+
+spec:
+  conatiners:
+  - name: c01
+    image: centos
+    command: ["/bin/bash", "-c", "sleep 15000"]
+
+    volumeMounts:
+      - name: testvolume
+        mountPath: /tmp/contdir
+
+  volumes:
+  - name: testvolume
+    hostPath:
+      path: /tmp/hostdir
+  
+

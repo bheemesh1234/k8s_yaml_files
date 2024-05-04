@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CroneJob
+metadata:
+  name: myjob
+
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        containers:
+        - image: ubuntu
+          name: mycont
+          command: ["/bin/bash", "-c", "echo Saidemy; sleep 15"]
+        restartPolicy: Never

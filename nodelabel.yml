@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nodelabel1
+
+spec:
+  containers:
+  - name: c00
+    image: ubuntu
+    command: ["/bin/bash", "-c", "while true; do echo hello-sai; sleep 10; done"]
+
+  nodeSelector:
+    mynode: saidemy

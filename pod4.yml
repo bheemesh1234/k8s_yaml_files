@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod4
+
+spec:
+  containers:
+  - name: c00
+    image: ubuntu
+    command: ["/bin/bash", "-c", "while true; do echo Hello-Sai; sleep 10; done"]
+
+    env:
+    - name: MYNAME
+      value: Sai
